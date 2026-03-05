@@ -62,27 +62,27 @@
 }
 
 .information .job::before {
-  background-image: url('/assets/icons/computer.svg');
+  background-image: url('assets/icons/computer.svg');
   filter: invert();
 }
 
 .information .location::before {
-  background-image: url('/assets/icons/location-pin-alt.svg');
+  background-image: url('assets/icons/location-pin-alt.svg');
   filter: invert();
 }
 
 .information .cargo::before {
-  background-image: url('/assets/icons/code.svg');
+  background-image: url('assets/icons/code.svg');
   filter: invert();
 }
 
 .information .phone::before {
-  background-image: url('/assets/icons/telefone.png');
+  background-image: url('assets/icons/telefone.png');
   filter: invert();
 }
 
 .information .email::before {
-  background-image: url('/assets/icons/mail-alt-3.svg');
+  background-image: url('assets/icons/mail-alt-3.svg');
   filter: invert();
 }
 

@@ -44,7 +44,7 @@
   height: 2rem;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url(/assets/icons/Seta.svg);
+  background-image: url(assets/icons/Seta.svg);
   filter: invert();
   rotate: -90deg;
   transition: 0.2s;

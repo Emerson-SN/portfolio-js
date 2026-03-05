@@ -1,0 +1,19 @@
+# Node modules (caso use Node)
+node_modules/
+
+# Logs
+*.log
+
+# Arquivos temporários do sistema
+.DS_Store
+Thumbs.db
+
+# Pastas de build (se usar)
+dist/
+build/
+
+# Configurações do VSCode
+.vscode/
+
+# Senhas e arquivos de configuração sensíveis
+.env
