@@ -24,7 +24,7 @@
   height: 1.1rem;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url(assets/icons/check-mark.svg);
+  background-image: url(../icons/check-mark.svg);
   filter: invert();
   margin-right: 0.5rem;
 }
