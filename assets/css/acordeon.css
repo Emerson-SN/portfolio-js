@@ -1,0 +1,64 @@
+.acordeon {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 0.2rem solid #fff;
+  border-radius: 1rem;
+  margin: 1rem 0;
+  transition: 0.3s;
+}
+
+.acordeon .content {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.acordeon.acordeon.open,
+.acordeon:hover {
+  background-color: #00cfa0;
+  border-color: #00cfa0;
+}
+
+.acordeon .trigger {
+  font-size: 1rem;
+  font-weight: 700;
+  display: flex;
+  flex-direction: row;
+  padding: 1rem 1rem;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.acordeon .trigger:hover {
+  cursor: pointer;
+}
+
+.acordeon .trigger::after {
+  content: '';
+  display: inline-block;
+  width: 1.5rem;
+  height: 2rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(assets/icons/Seta.svg);
+  filter: invert();
+  rotate: -90deg;
+  transition: 0.2s;
+}
+
+.acordeon.open .trigger::after {
+  rotate: 90deg;
+}
+
+.acordeon .content {
+  padding: 0.1rem;
+  display: none;
+}
+
+.acordeon.open .content {
+  display: inline-block;
+}

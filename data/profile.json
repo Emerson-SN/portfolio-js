@@ -1,0 +1,66 @@
+{
+  "name": "Emerson Santos",
+  "photo": "assets/img/foto-perfil.jpeg",
+  "job": "Programador e Desenvolvedor",
+  "location": "Brasilia-DF",
+  "cargo": "Full Stack • Automação • IA",
+  "phone": "(61) 98303-3251",
+  "email": "emerson_t92@hotmail.com",
+
+  "languages": ["Português BR", "Inglês (Básico)"],
+
+  "portfolio": [
+    {
+      "project": "Jogo da Velha",
+      "url": "https://github.com/Emerson-SN/jogo-da-velha-js.git",
+      "github": true
+    },
+    {
+      "project": "Pokedex",
+      "url": "https://github.com/Emerson-SN/Pokedex.git",
+      "github": true
+    },
+    {
+      "project": "Matriz Confusão",
+      "url": "https://github.com/Emerson-SN/Matriz_confusao.git",
+      "github": true
+    },
+    {
+      "project": "Algoritmo de Binarização",
+      "url": "https://github.com/Emerson-SN/Algoritimo-de-Binariza-o.git",
+      "github": true
+    },
+    {
+      "project": "Transfer Learning Cats e Dogs",
+      "url": "https://github.com/Emerson-SN/transfer-learning-cats-dogs.git",
+      "github": true
+    }
+  ],
+
+  "experience": [
+    {
+      "experience": "Experiência em TI (Estudos e Projetos)",
+      "period": "2024 - até o momento",
+      "description": "Desenvolvedor em formação com foco em projetos práticos.\n\nDesenvolvimento de aplicações em Python e JavaScript.\nCriação de páginas web com HTML, CSS e JS.\nConsumo de APIs, manipulação de JSON e automações.\nVersionamento de código com Git e GitHub.\nDesenvolvimento de portfólio técnico e projetos pessoais."
+    },
+    {
+      "experience": "Transição de Carreira para TI",
+      "period": "",
+      "description": "Profissional em migração para a área de Tecnologia da Informação.\n\nFormação e pós-graduação em andamento.\nFoco em desenvolvimento de sistemas, automação e soluções tecnológicas.\nPerfil autodidata, disciplinado e orientado a processos."
+    },
+    {
+      "experience": "Experiência Profissional",
+      "period": "2015 - 2025",
+      "description": "Atuação no Tribunal de Justiça do Distrito Federal e dos Territórios (TJDFT).\n\nExperiência em ambiente institucional com alto nível de responsabilidade.\nControle de acessos, registros e organização de dados em planilhas.\nOperação de sistemas internos e atendimento ao público.\nComunicação formal via e-mail e cumprimento de protocolos operacionais."
+    }
+  ],
+
+  "softSkills": [
+    "Aprendizado contínuo",
+    "Raciocínio lógico",
+    "Organização e disciplina",
+    "Resolução de problemas",
+    "Adaptabilidade",
+    "Comunicação clara"
+  ]
+}

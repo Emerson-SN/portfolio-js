@@ -1,0 +1,48 @@
+.experience {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 700;
+}
+
+.experience .experience {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.experience .period {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.experience .description {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.experience li p {
+  font-weight: 500;
+  margin-left: 1rem;
+}
+
+.period {
+  display: flex;
+  align-items: center;
+}
+
+.experience .period::before {
+  content: '';
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.1rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(assets/icons/calendar-days.svg);
+  align-items: center;
+  justify-content: center;
+  filter: invert();
+}
