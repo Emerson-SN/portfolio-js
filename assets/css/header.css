@@ -1,0 +1,137 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.header .icon-dots {
+  position: absolute;
+  top: 0.01rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  filter: invert();
+}
+
+.header .icon-dots img {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 2rem;
+}
+
+.header .photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 0.2rem solid #fff;
+}
+
+.header .title {
+  text-align: center;
+}
+
+.header .information {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.01rem;
+  display: flex;
+  margin-left: 5rem;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.information p {
+  display: flex;
+  margin: 0.5rem;
+  flex-direction: row;
+  align-items: center;
+}
+
+.information p::before {
+  width: 100%;
+  content: '';
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.information .job::before {
+  background-image: url('/assets/icons/computer.svg');
+  filter: invert();
+}
+
+.information .location::before {
+  background-image: url('/assets/icons/location-pin-alt.svg');
+  filter: invert();
+}
+
+.information .cargo::before {
+  background-image: url('/assets/icons/code.svg');
+  filter: invert();
+}
+
+.information .phone::before {
+  background-image: url('/assets/icons/telefone.png');
+  filter: invert();
+}
+
+.information .email::before {
+  background-image: url('/assets/icons/mail-alt-3.svg');
+  filter: invert();
+}
+
+.information .job a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.information .job a:hover {
+  text-decoration: underline;
+}
+
+.information .phone a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.information .phone a:hover {
+  text-decoration: underline;
+}
+
+.information .email a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.information .email a:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 768px) {
+  .main {
+    margin: 1rem;
+  }
+
+  .header {
+    display: grid;
+    grid-template-areas:
+      'photo title'
+      'photo information';
+  }
+  .header .photo {
+    grid-area: photo;
+    margin: 0 auto;
+  }
+  .header .title {
+    grid-area: title;
+  }
+  .header .information {
+    grid-area: information;
+  }
+}
