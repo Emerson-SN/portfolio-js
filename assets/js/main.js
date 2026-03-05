@@ -1,80 +1,109 @@
 function updateProfileInfo(profileData) {
   // Foto
   const photo = document.getElementById('profile-photo');
-  photo.src = profileData.photo;
-  photo.alt = profileData.name;
+  if (photo) {
+    photo.src = profileData.photo;
+    photo.alt = profileData.name;
+  }
 
-  // Texto simples
-  document.getElementById('profile-name').innerText = profileData.name;
-  document.getElementById('profile-location').innerText = profileData.location;
-  document.getElementById('profile-job').innerText = profileData.job;
+  // Nome
+  const name = document.getElementById('profile-name');
+  if (name) name.innerText = profileData.name;
 
-  // O Cargo no seu HTML tem um span dentro
+  // Localização
+  const location = document.getElementById('profile-location');
+  if (location) location.innerText = profileData.location;
+
+  // Job / LinkedIn
+  const job = document.getElementById('profile-job');
+  if (job) job.innerText = profileData.job;
+
+  // Cargo (Tratando o span interno)
   const cargoContainer = document.getElementById('profile-cargo');
   if (cargoContainer) {
     cargoContainer.innerHTML = `<span class="cargo">${profileData.cargo}</span>`;
   }
 
-  // Links (Telefone e Email)
+  // Telefone
   const phone = document.getElementById('profile-phone');
-  phone.innerText = profileData.phone;
-  phone.href = `tel:${profileData.phone}`;
+  if (phone) {
+    phone.innerText = profileData.phone;
+    phone.href = `tel:${profileData.phone.replace(/\D/g, '')}`; // Remove caracteres não numéricos para o link
+  }
 
+  // Email
   const email = document.getElementById('profile-email');
-  email.innerText = profileData.email;
-  email.href = `mailto:${profileData.email}`;
+  if (email) {
+    email.innerText = profileData.email;
+    email.href = `mailto:${profileData.email}`;
+  }
 }
 
 function updateSoftSkills(profileData) {
   const softSkills = document.querySelector('.soft-skills');
-  // Mapeia o array "softSkills" do seu JSON
-  softSkills.innerHTML = profileData.softSkills
-    .map((skill) => `<li>${skill}</li>`)
-    .join('');
+  if (softSkills && profileData.softSkills) {
+    softSkills.innerHTML = profileData.softSkills
+      .map((skill) => `<li>${skill}</li>`)
+      .join('');
+  }
 }
 
 function updateLanguages(profileData) {
   const languages = document.querySelector('.languages');
-  languages.innerHTML = profileData.languages
-    .map((lang) => `<li>${lang}</li>`)
-    .join('');
+  if (languages && profileData.languages) {
+    languages.innerHTML = profileData.languages
+      .map((lang) => `<li>${lang}</li>`)
+      .join('');
+  }
 }
 
 function updatePortfolio(profileData) {
   const portfolio = document.querySelector('.portfolio');
-  portfolio.innerHTML = profileData.portfolio
-    .map((project) => {
-      return `
-      <li>
-        <span class="project">${project.project}</span>
-        <a class="github" href="${project.url}" target="_blank">Ver no GitHub</a>
-      </li>`;
-    })
-    .join('');
+  if (portfolio && profileData.portfolio) {
+    portfolio.innerHTML = profileData.portfolio
+      .map(
+        (project) => `
+                <li>
+                    <span class="project">${project.project}</span>
+                    <a class="github" href="${project.url}" target="_blank">Ver no GitHub</a>
+                </li>`,
+      )
+      .join('');
+  }
 }
 
 function updateExperience(profileData) {
   const experience = document.querySelector('.experience');
-  experience.innerHTML = profileData.experience
-    .map((exp) => {
-      return `
-      <li>
-        <p class="experience">${exp.experience}</p>
-        <p class="period">${exp.period}</p>
-        <p class="description">${exp.description.replace(/\n/g, '<br>')}</p>
-      </li>`;
-    })
-    .join('');
+  if (experience && profileData.experience) {
+    experience.innerHTML = profileData.experience
+      .map(
+        (exp) => `
+                <li>
+                    <p class="experience">${exp.experience}</p>
+                    <p class="period">${exp.period}</p>
+                    <p class="description">${exp.description.replace(/\n/g, '<br>')}</p>
+                </li>`,
+      )
+      .join('');
+  }
 }
 
+// Inicialização
 document.addEventListener('DOMContentLoaded', async () => {
-  const profileData = await fetchProfileData();
+  try {
+    const profileData = await fetchProfileData();
 
-  if (profileData) {
-    updateProfileInfo(profileData);
-    updateSoftSkills(profileData);
-    updateLanguages(profileData);
-    updatePortfolio(profileData);
-    updateExperience(profileData);
+    if (profileData) {
+      updateProfileInfo(profileData);
+      updateSoftSkills(profileData);
+      updateLanguages(profileData);
+      updatePortfolio(profileData);
+      updateExperience(profileData);
+      console.log('Portfólio atualizado com sucesso!');
+    } else {
+      console.error('Dados do perfil não encontrados.');
+    }
+  } catch (error) {
+    console.error('Erro ao carregar dados:', error);
   }
 });
